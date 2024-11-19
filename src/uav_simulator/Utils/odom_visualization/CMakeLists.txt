@@ -49,7 +49,6 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   quadrotor_msgs
   tf
-  pose_utils
 )
 
 ## System dependencies are found with CMake's conventions
@@ -142,6 +141,7 @@ include_directories(${ARMADILLO_INCLUDE_DIRS})
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(include)
+include_directories(../pose_utils/include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
@@ -162,7 +162,7 @@ add_executable(odom_visualization src/odom_visualization.cpp)
 target_link_libraries(odom_visualization
    ${catkin_LIBRARIES}
    ${ARMADILLO_LIBRARIES}
-   pose_utils
+   /home/lio/Desktop/PX4/PX4_ws/devel/lib/libpose_utils.so
 )
 
 #############
